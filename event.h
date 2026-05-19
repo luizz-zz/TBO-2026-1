@@ -1,6 +1,13 @@
 #ifndef EVENT_T
 #define EVENT_T
 
+typedef int Item;
+#define key(A) (A)
+#define less(A, B) (key(A) < key(B))
+#define exch(A, B) { Item t = A; A = B; B = t; }
+#define compexch(A, B) if (less(B, A)) exch(A, B)
+#define greater(A, B) (key(A) > key(B))
+
 #include <stdbool.h>
 #include "particle.h"
 

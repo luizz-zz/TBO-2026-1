@@ -128,6 +128,16 @@ void predict(Particle *p) {
     //   função 'create_event' em 'event.h', um evento de colisão com uma
     //   parece vertical é criado passando-se a PRIMEIRA partícula para a função
     //   como nula.
+    if(p == NULL)
+        return;
+
+    for(int i = 0; i < N; i++)
+    {
+        if(time_to_hit(p, particles[i]) <= limit)
+        {
+            create_event(time_to_hit(p, particles[i]), p, particles[i]);
+        }
+    }
 }
 
 /*
